@@ -53,7 +53,7 @@ class User extends Authenticatable
     public function groups()
     {
         //belongsToMany = pertence y tiene muchos
-        return $this->belongsToMany(Group::class);
+        return $this->belongsToMany(Group::class)->withTimestamps();
     }
 
     //un user tiene una location a traves de profile
