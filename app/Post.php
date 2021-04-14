@@ -11,14 +11,14 @@ class Post extends Model
     {
         return $this->belongsTo(User::class);
     }
+
     //un post pertence a una categoria
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
 
-
-    //metodo, relacion polimorfica | commentable es el prefijo
+    //post tiene muchos comentarios | metodo, relacion polimorfica | commentable es el prefijo
     public function comments()
     {
         //esto es basicamente un hashMany, solo que es polimorfico | tiene muchos
@@ -26,12 +26,14 @@ class Post extends Model
         //esto se va a autocompletar EJ: commentable_id y commentable_type
     }
 
+    //post tiene una unica imagen
     public function image()
     {
         //esto es basicamente un hashOne, solo que es polimorfico
         return $this->morphOne(Image::class, 'imageable');
     }
 
+    //post tiene muchas etiquetas
     public function tags()
     {
         //muchos a muchos polimorfico y transformate para muchos

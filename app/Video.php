@@ -17,7 +17,7 @@ class Video extends Model
         return $this->belongsTo(Category::class);
     }
 
-
+    //tiene muchos comments
     //metodo, relacion polimorfica | commentable es el prefijo
     public function comments()
     {
@@ -26,12 +26,14 @@ class Video extends Model
         //esto se va a autocompletar EJ: commentable_id y commentable_type
     }
 
+    //tiene una unica imagen
     public function image()
     {
         //esto es basicamente un hashOne, solo que es polimorfico
         return $this->morphOne(Image::class, 'imageable');
     }
 
+    //tiene muchas etiquetas
     public function tags()
     {
         //muchos a muchos polimorfico

@@ -7,6 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Group::class, function (Faker $faker) {
     return [
-        //
+        //Configuracion para Seeder - Nombre aleatorios
+        'name'=>$faker->word
     ];
 });
