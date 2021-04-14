@@ -10,7 +10,7 @@ $factory->define(Profile::class, function (Faker $faker) {
         //
         'instagram' => $faker->userName,
         'github' => $faker->userName,
-        'web' => $faker->web
+        'web' => $faker->url
 
     ];
 });
