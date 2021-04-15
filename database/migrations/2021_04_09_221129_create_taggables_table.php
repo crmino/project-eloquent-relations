@@ -21,7 +21,7 @@ class CreateTaggablesTable extends Migration
             //relacion polimorfica, estas terminan en able
             $table->morphs('taggable');
 
-            $table->timestamps();
+            //$table->timestamps();
 
             $table->foreign('tag_id')->references('id')->on('tags')
                 ->onDelete('cascade')

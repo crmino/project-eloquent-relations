@@ -1,5 +1,7 @@
 <?php
 
+use App\Image;
+use Hamcrest\Core\HasToString;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -35,7 +37,7 @@ class DatabaseSeeder extends Seeder
             //imagen creada con un valor por defecto, definido en factory
             //aca ponemos una imagen de perfil con otro valor: 90X90
             $user->image()->save(factory(App\Image::class)->make([
-                'url' => 'https://lorempixel.com/90/90/'
+                'url' => 'https://picsum.photos/90/90?' . generateRandomString()
             ]));
 
 
